@@ -29,6 +29,26 @@ class Content extends BaseContent
     protected $image;
 
     /**
+     * @PHPCRODM\Id(strategy="parent")
+     */
+    protected $id;
+
+    /**
+     * @PHPCRODM\ParentDocument
+     */
+    protected $parent;
+
+    /**
+     * @PHPCRODM\NodeName
+     */
+    protected $name;
+
+    /**
+     * @PHPCRODM\String
+     */
+    protected $title;
+
+    /**
      * Set the image for this block.
      *
      * Setting null will do nothing, as this is what happens when you edit this
@@ -75,5 +95,45 @@ class Content extends BaseContent
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setParentDocument($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    public function getParentDocument()
+    {
+        return $this->parent;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getTitle() 
+    {
+        return $this->title;
+    }
+    
+    public function setTitle($title)
+    {
+        $this->title = $title;
     }
 } 
